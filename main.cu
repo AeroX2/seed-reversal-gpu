@@ -334,7 +334,7 @@ int main() {
 
     calculate_search_backs();
 
-    FILE* out_file = fopen("chunk_seeds.txt", "w");
+    FILE* out_file = fopen("chunk_seeds_from_456080228352.txt", "w");
 
     for(int i = 0; i < GPU_COUNT; i++) {
         setup_gpu_node(&nodes[i],i);
@@ -343,7 +343,7 @@ int main() {
     
     ulong count = 0;
     clock_t startTime = clock();
-    for (ulong offset = 0; offset < TOTAL_WORK_SIZE;) {
+    for (ulong offset = 456080228352LL; offset < TOTAL_WORK_SIZE;) {
         
         for(int gpu_index = 0; gpu_index < GPU_COUNT; gpu_index++) {
             CHECK_GPU_ERR(cudaSetDevice(gpu_index));
